@@ -34,9 +34,9 @@ public class Dog extends Animal{
         System.out.println(this.getName() + "Проплив(ла) 20м");;
     }
 
-    @Override
-    public void howMany() {
-        super.howMany();
+
+    public static void howMany() {
+        Animal.howMany();
         System.out.println("Собак:" + amountD);
     }
 }

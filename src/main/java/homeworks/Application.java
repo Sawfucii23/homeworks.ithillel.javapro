@@ -1,5 +1,6 @@
 package homeworks;
 
+import homeworks.hw3.Car;
 import homeworks.hw4.Animal;
 import homeworks.hw4.Cat;
 import homeworks.hw4.Dog;
@@ -9,6 +10,10 @@ import java.util.List;
 
 public class Application {
     public static void main(String[] args) {
+
+        System.out.println("HW4");
+        System.out.println();
+
         List<Animal>animals = new ArrayList<Animal>();
         animals.add(new Cat("cat1", "black"));
         animals.add(new Cat("cat2", "white"));
@@ -23,7 +28,18 @@ public class Application {
             animals.get(x).swim();
         }
 
-        animals.get(0).howMany();
-        animals.get(3).howMany();
+        Animal.howMany();
+        Cat.howMany();
+        Dog.howMany();
+
+
+        System.out.println();
+        System.out.println("HW3");
+        System.out.println();
+
+        Car audir8 = new Car("audir8", 380);
+
+        System.out.println(audir8.show());
+        audir8.start();
     }
 }

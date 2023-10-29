@@ -4,3 +4,4 @@
 
 - homework 1/2 [another repository](https://github.com/Sawfucii23/hillel-javapro-git-demo)
 - homework 4
+- homework 3

@@ -27,7 +27,7 @@ public class Animal {
     public void swim(){
 
     }
-    public void howMany(){
+    public static void howMany(){
         System.out.println("Тварин: " + amountA);
     }
 }
