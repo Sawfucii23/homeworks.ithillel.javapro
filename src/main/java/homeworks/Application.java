@@ -4,8 +4,17 @@ import homeworks.hw3.Car;
 import homeworks.hw4.Animal;
 import homeworks.hw4.Cat;
 import homeworks.hw4.Dog;
+import homeworks.hw5.frst.Circle;
+import homeworks.hw5.frst.ForFigure;
+import homeworks.hw5.frst.Square;
+import homeworks.hw5.frst.Triangle;
+import homeworks.hw5.scnd.Barrier;
+import homeworks.hw5.scnd.Participant;
+import homeworks.hw5.scnd.Racetrack;
+import homeworks.hw5.scnd.Wall;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class Application {
@@ -41,5 +50,130 @@ public class Application {
 
         System.out.println(audir8.show());
         audir8.start();
+
+        System.out.println();
+        System.out.println("hw5(1)");
+        System.out.println();
+        ArrayList<ForFigure>figures = new ArrayList<ForFigure>();
+        figures.add(new Circle(1.5));
+        figures.add(new Triangle(12,13,14));
+        figures.add(new Square(5));
+
+        System.out.println(squareOfAllFigurehw5(figures));
+
+
+        System.out.println();
+        System.out.println("hw5(2)");
+        System.out.println();
+
+
+        ArrayList<Participant>participants = new ArrayList<Participant>();
+        ArrayList<Barrier>barriers = new ArrayList<Barrier>();
+
+        participants.add(new Participant("Cat",10, 2.0, true));
+        participants.add(new Participant("Person",15, 1.0, true));
+        participants.add(new Participant("Robot",5,1.5, true));
+
+        barriers.add(new Racetrack("racetrack1", 0.5));
+        barriers.add(new Racetrack("racetrack2", 0.75));
+        barriers.add(new Wall("wall1", 1.5));
+        barriers.add(new Wall("wall1", 1.2));
+
+        System.out.println(race1(participants,barriers));
+
+        soutFellNotFell(participants);
     }
+
+
+
+
+    public static double squareOfAllFigurehw5(ArrayList<ForFigure>figures){
+        double squareSum = 0;
+
+        for (int x = 0; x < figures.size(); x ++){
+            if (figures.get(x) instanceof Circle){
+                squareSum += ((Circle) figures.get(x)).square();
+            }
+            else if (figures.get(x) instanceof Square){
+                squareSum += ((Square) figures.get(x)).square();
+            }
+            else if (figures.get(x) instanceof Triangle){
+                squareSum += ((Triangle) figures.get(x)).square();
+            }
+        }
+        return squareSum;
+    }
+    public static ArrayList<Double>race(ArrayList<Participant>participants, ArrayList<Barrier>barriers, int raceDistance){
+        ArrayList<Double>raceTimeInfo = new ArrayList<Double>();
+        double time = 0;
+
+        for (int x = 0; x < participants.size(); x++){
+            time = 0;
+            for (int y = 0; y < barriers.size(); y++){
+                if (barriers.get(y) instanceof Racetrack){
+                    participants.get(x).run(((Racetrack)barriers.get(y)));
+
+                }
+                else if (barriers.get(y) instanceof  Wall){
+                    participants.get(x).jump( ((Wall)barriers.get(y)),time  );
+                }
+            }
+            time += raceDistance/participants.get(x).getSpeedKmPH();
+            raceTimeInfo.add(time);
+            System.out.println(participants.get(x).getName());
+        }
+
+        return raceTimeInfo;
+    }
+
+    public static HashMap<String,Double> race1(ArrayList<Participant>participants, ArrayList<Barrier>barriers){
+        HashMap<String,Double>raceTimeInfo = new HashMap<String,Double>();
+        double time = 0;
+
+        for (int x = 0; x < participants.size(); x++){
+            time = 0;
+            for (int y = 0; y < barriers.size(); y++){
+                if (barriers.get(y) instanceof Racetrack){
+                    if (participants.get(x).isStand()) {
+                        participants.get(x).run(((Racetrack) barriers.get(y)));
+                        time += (((Racetrack) barriers.get(y)).getDistance() /participants.get(x).getSpeedKmPH());
+                    }
+                }
+                else if (barriers.get(y) instanceof  Wall){
+                    if (participants.get(x).isStand()) {
+                        participants.get(x).jump1(((Wall) barriers.get(y)));
+                        if (participants.get(x).isStand()){
+                            time += 0.1;
+                        }
+                        else {
+                            time += 0.2;
+                        }
+                    }
+                }
+            }
+
+            raceTimeInfo.put(participants.get(x).getName(), time);
+            System.out.println(participants.get(x).getName());
+
+        }
+
+        return raceTimeInfo;
+    }
+
+    public static void soutFellNotFell(ArrayList<Participant>participants){
+        String tmp = "";
+        for (int x = 0; x < participants.size(); x++){
+            if (participants.get(x).isStand()){
+                tmp = "стоїть";
+            }
+            else tmp = "не встояв";
+            System.out.println(participants.get(x).getName() + ": " + tmp);
+        }
+    }
+
+
+
+
+
+
 }
