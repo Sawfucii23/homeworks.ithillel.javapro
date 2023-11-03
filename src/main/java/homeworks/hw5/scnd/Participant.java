@@ -1,6 +1,6 @@
 package homeworks.hw5.scnd;
 
-public class Participant implements Racer{
+public class Participant implements Jumper, Runner{
     private String name;
     private double speedKmPH;
     private double jumpHigh;
@@ -49,7 +49,7 @@ public class Participant implements Racer{
         return this.name + " " + this.speedKmPH;
     }
 
-
+    @Override
     public void jump(Wall wall, double time) {
         if (this.jumpHigh < wall.getHigh()){
             time += 0.2;
@@ -58,6 +58,10 @@ public class Participant implements Racer{
         //else System.out.println("jump");
         else time += 0.1;
     }
+
+
+
+    @Override
     public void jump1(Wall wall) {
         if (this.jumpHigh < wall.getHigh()){
 
@@ -69,9 +73,10 @@ public class Participant implements Racer{
     }
 
 
-
+    @Override
     public void run(Racetrack racetrack) {
         //System.out.println("run");
 
     }
+
 }
