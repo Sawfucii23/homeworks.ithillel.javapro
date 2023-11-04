@@ -12,6 +12,8 @@ import homeworks.hw5.scnd.Barrier;
 import homeworks.hw5.scnd.Participant;
 import homeworks.hw5.scnd.Racetrack;
 import homeworks.hw5.scnd.Wall;
+import homeworks.hw6.HomeWorkApp;
+import homeworks.hw7.StringMethods;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -82,6 +84,19 @@ public class Application {
         System.out.println(race1(participants,barriers));
 
         soutFellNotFell(participants);
+
+        System.out.println();
+        System.out.println("hw7");
+        System.out.println();
+        System.out.println(StringMethods.findSymbolOccurance("sssttsss", 's'));
+        System.out.println(StringMethods.findWordPosition("Hello", "ello"));
+        System.out.println(StringMethods.findWordPosition("Hello", "y"));
+        System.out.println(StringMethods.stringReverse("Hello"));
+        System.out.println(StringMethods.isPalindrome("ugu"));
+        System.out.println(StringMethods.isPalindrome("uuuuuu"));
+        System.out.println(StringMethods.isPalindrome("1234"));
+        StringMethods.stringGame();
+
     }
 
 
