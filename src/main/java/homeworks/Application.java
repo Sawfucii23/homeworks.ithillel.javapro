@@ -14,13 +14,15 @@ import homeworks.hw5.scnd.Racetrack;
 import homeworks.hw5.scnd.Wall;
 import homeworks.hw6.HomeWorkApp;
 import homeworks.hw7.StringMethods;
+import homeworks.hw8.ArrayValueCalculator;
 
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
 public class Application {
-    public static void main(String[] args) {
+    public static void main(String[] args)  {
 
         System.out.println("HW4");
         System.out.println();
@@ -95,7 +97,22 @@ public class Application {
         System.out.println(StringMethods.isPalindrome("ugu"));
         System.out.println(StringMethods.isPalindrome("uuuuuu"));
         System.out.println(StringMethods.isPalindrome("1234"));
-        StringMethods.stringGame();
+        //StringMethods.stringGame();
+
+        System.out.println();
+        System.out.println("hw8");
+        System.out.println();
+        String[][] example = {{"1", "2", "3"}, {"4", "5", "6"}, {"7", "8", "9"}};
+        try {
+            ArrayValueCalculator.doCalc(example);
+        }
+        catch (ArrayValueCalculator.ArraySizeException e) {
+            e.getMessage();
+        }
+        catch (ArrayValueCalculator.ArrayDataException e) {
+            e.getMessage();
+        }
+
 
     }
 

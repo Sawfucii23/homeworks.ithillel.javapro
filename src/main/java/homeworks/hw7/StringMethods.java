@@ -67,10 +67,11 @@ public class StringMethods {
 
         String[] words = {"apple", "orange", "lemon", "banana", "apricot", "avocado" , "broccoli", "carrot", "cherry", "garlic", "grape", "melon", "leak", "kiwi", "mango", "mushroom", "nut", "olive", " pea", "peanut", "pear", "pepper", "pineapple", "pumpkin", "potato"};
         word = words[random.nextInt(words.length)];
+        int tmpCount = 1;
         while (correct = true || tip.contains("#")) {
             System.out.println("Спробуй вгадати загадане слово:");
             answer = scanner.next();
-            //for (int x = 0; x < words.length; x++) {
+
             if (answer.equals(word)){
                 System.out.println("Перемога");
                 correct = true;
@@ -78,23 +79,29 @@ public class StringMethods {
             }
             else System.out.println("Слово невірне");
 
-//          String longest;
-//          String shortest;
-//                if (answer.length() > words[x].length()){
-//                    longest = answer;
-//                    shortest = words[x];
-//                }
-//                else {
-//                    longest = words[x];
-//                    shortest = answer;
-//                }
-//            boolean letterEquals;
-            int tmpCount = 1;
-            for (int y = 0; y < answer.length(); y++){
+//            for (int o = 0; o < words.length; o++){
+//                if ()
+//            }
+
+            String longest = "";
+            String shortest;
+
+            if (answer.length() > word.length()) {
+                longest = answer;
+                shortest = word;
+            }
+            else {
+                longest = word;
+                shortest = answer;
+            }
+
+
+            for (int y = 0; y < shortest.length(); y++){
                 if (answer.charAt(y) == word.charAt(y)){
-                        tip = word.charAt(y) + tip.substring(tmpCount);
+                        tip = word.charAt(y + tmpCount -1) + tip.substring(tmpCount + y-2);
                         tmpCount++;
                 }
+                else break;
             }
             System.out.println(tip);
 

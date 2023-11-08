@@ -2,6 +2,11 @@
 
 ## List of done:
 
-- homework 1/2 [another repository](https://github.com/Sawfucii23/hillel-javapro-git-demo)
-- homework 4
-- homework 3
+- hw 1/2 [another repository](https://github.com/Sawfucii23/hillel-javapro-git-demo)
+- hw4
+- hw3
+- hw4
+- hw5
+- hw6
+- hw7
+- hw8
