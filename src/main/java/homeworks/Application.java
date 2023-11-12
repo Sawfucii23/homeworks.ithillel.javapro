@@ -15,6 +15,8 @@ import homeworks.hw5.scnd.Wall;
 import homeworks.hw6.HomeWorkApp;
 import homeworks.hw7.StringMethods;
 import homeworks.hw8.ArrayValueCalculator;
+import homeworks.hw8.Exeptionshw8.ArrayDataException;
+import homeworks.hw8.Exeptionshw8.ArraySizeExeption;
 
 import java.text.ParseException;
 import java.util.ArrayList;
@@ -102,16 +104,24 @@ public class Application {
         System.out.println();
         System.out.println("hw8");
         System.out.println();
-        String[][] example = {{"1", "2", "3"}, {"4", "5", "6"}, {"7", "8", "9"}};
+        String[][] example = {{"1", "2", "3","3"}, {"4", "5", "6", "5"}, {"7", "8", "9", "4"}, {"4", "5", "6", "6"}};
         try {
-            ArrayValueCalculator.doCalc(example);
+            System.out.println(ArrayValueCalculator.doCalc(example));
         }
-        catch (ArrayValueCalculator.ArraySizeException e) {
-            e.getMessage();
+        catch (NumberFormatException e){
+
         }
-        catch (ArrayValueCalculator.ArrayDataException e) {
-            e.getMessage();
+        catch (ArrayDataException e) {
+            System.out.println(e.getMessage());
         }
+        catch (ArraySizeExeption e) {
+            System.out.println(e.getMessage());
+        }
+
+
+
+
+
 
 
     }
