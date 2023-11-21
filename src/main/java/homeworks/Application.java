@@ -1,5 +1,6 @@
 package homeworks;
 
+import homeworks.hw10.ValueCalculator;
 import homeworks.hw3.Car;
 import homeworks.hw4.Animal;
 import homeworks.hw4.Cat;
@@ -118,11 +119,16 @@ public class Application {
             System.out.println(e.getMessage());
         }
 
+        System.out.println();
+        System.out.println("hw10");
+        System.out.println();
 
-
-
-
-
+        try {
+            ValueCalculator vc = new ValueCalculator(1230000);
+            vc.method();
+        } catch (ArraySizeExeption e) {
+            throw new RuntimeException(e);
+        }
 
     }
 
