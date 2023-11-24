@@ -23,14 +23,14 @@ public class FileLogger {
             }
 
             if (writer == null) {
-                // відкриваємо файл за допомогою об'єкта PrintWriter
+
                 writer = new PrintWriter(new FileWriter(config.getFile(), true));
             }
-            // форматуємо повідомлення за допомогою конфігурації
+
             String formattedMessage = String.format(config.getFormat(), new Date(), level, message);
-            // записуємо повідомлення у файл
+
             writer.println(formattedMessage);
-            // змушуємо записувач вивести буфер у файл
+
             writer.flush();
         }
     }
