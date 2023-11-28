@@ -1,6 +1,7 @@
 package homeworks;
 
 import homeworks.hw10.ValueCalculator;
+import homeworks.hw12.CollectionMethodsHw12;
 import homeworks.hw3.Car;
 import homeworks.hw4.Animal;
 import homeworks.hw4.Cat;
