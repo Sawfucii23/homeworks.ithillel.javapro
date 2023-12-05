@@ -1,6 +1,7 @@
 package homeworks;
 
 import homeworks.hw10.ValueCalculator;
+import homeworks.hw11.ImgLoader;
 import homeworks.hw12.CollectionMethodsHw12;
 import homeworks.hw3.Car;
 import homeworks.hw4.Animal;
@@ -20,116 +21,120 @@ import homeworks.hw8.ArrayValueCalculator;
 import homeworks.hw8.Exeptionshw8.ArrayDataException;
 import homeworks.hw8.Exeptionshw8.ArraySizeExeption;
 
+import java.io.IOException;
+import java.net.URISyntaxException;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
 public class Application {
-    public static void main(String[] args)  {
+    public static void main(String[] args) throws IOException, URISyntaxException {
 
-        System.out.println("HW4");
-        System.out.println();
+//        System.out.println("HW4");
+//        System.out.println();
+//
+//        List<Animal>animals = new ArrayList<Animal>();
+//        animals.add(new Cat("cat1", "black"));
+//        animals.add(new Cat("cat2", "white"));
+//        animals.add(new Cat("cat3", "blue"));
+//        animals.add(new Dog("dog1", 3));
+//        animals.add(new Dog("dog2", 7));
+//        animals.add(new Dog("dog3", 10));
+//
+//        for (int x  = 0; x < animals.size(); x++){
+//            System.out.println(animals.get(x).show());
+//            animals.get(x).run();
+//            animals.get(x).swim();
+//        }
+//
+//        Animal.howMany();
+//        Cat.howMany();
+//        Dog.howMany();
+//
+//
+//        System.out.println();
+//        System.out.println("HW3");
+//        System.out.println();
+//
+//        Car audir8 = new Car("audir8", 380);
+//
+//        System.out.println(audir8.show());
+//        audir8.start();
+//
+//        System.out.println();
+//        System.out.println("hw5(1)");
+//        System.out.println();
+//        ArrayList<ForFigure>figures = new ArrayList<ForFigure>();
+//        figures.add(new Circle(1.5));
+//        figures.add(new Triangle(12,13,14));
+//        figures.add(new Square(5));
+//
+//        System.out.println(squareOfAllFigurehw5(figures));
+//
+//
+//        System.out.println();
+//        System.out.println("hw5(2)");
+//        System.out.println();
+//
+//
+//        ArrayList<Participant>participants = new ArrayList<Participant>();
+//        ArrayList<Barrier>barriers = new ArrayList<Barrier>();
+//
+//        participants.add(new Participant("Cat",10, 2.0, true));
+//        participants.add(new Participant("Person",15, 1.0, true));
+//        participants.add(new Participant("Robot",5,1.5, true));
+//
+//        barriers.add(new Racetrack("racetrack1", 0.5));
+//        barriers.add(new Racetrack("racetrack2", 0.75));
+//        barriers.add(new Wall("wall1", 1.5));
+//        barriers.add(new Wall("wall1", 1.2));
+//
+//        System.out.println(race1(participants,barriers));
+//
+//        soutFellNotFell(participants);
+//
+//        System.out.println();
+//        System.out.println("hw7");
+//        System.out.println();
+//        System.out.println(StringMethods.findSymbolOccurance("sssttsss", 's'));
+//        System.out.println(StringMethods.findWordPosition("Hello", "ello"));
+//        System.out.println(StringMethods.findWordPosition("Hello", "y"));
+//        System.out.println(StringMethods.stringReverse("Hello"));
+//        System.out.println(StringMethods.isPalindrome("ugu"));
+//        System.out.println(StringMethods.isPalindrome("uuuuuu"));
+//        System.out.println(StringMethods.isPalindrome("1234"));
+//        //StringMethods.stringGame();
+//
+//        System.out.println();
+//        System.out.println("hw8");
+//        System.out.println();
+//        String[][] example = {{"1", "2", "3","3"}, {"4", "5", "6", "5"}, {"7", "8", "9", "4"}, {"4", "5", "6", "6"}};
+//        try {
+//            System.out.println(ArrayValueCalculator.doCalc(example));
+//        }
+//        catch (NumberFormatException e){
+//
+//        }
+//        catch (ArrayDataException e) {
+//            System.out.println(e.getMessage());
+//        }
+//        catch (ArraySizeExeption e) {
+//            System.out.println(e.getMessage());
+//        }
+//
+//        System.out.println();
+//        System.out.println("hw10");
+//        System.out.println();
+//
+//        try {
+//            ValueCalculator vc = new ValueCalculator(1230000);
+//            vc.method();
+//        } catch (ArraySizeExeption e) {
+//            throw new RuntimeException(e);
+//        }
 
-        List<Animal>animals = new ArrayList<Animal>();
-        animals.add(new Cat("cat1", "black"));
-        animals.add(new Cat("cat2", "white"));
-        animals.add(new Cat("cat3", "blue"));
-        animals.add(new Dog("dog1", 3));
-        animals.add(new Dog("dog2", 7));
-        animals.add(new Dog("dog3", 10));
-
-        for (int x  = 0; x < animals.size(); x++){
-            System.out.println(animals.get(x).show());
-            animals.get(x).run();
-            animals.get(x).swim();
-        }
-
-        Animal.howMany();
-        Cat.howMany();
-        Dog.howMany();
-
-
-        System.out.println();
-        System.out.println("HW3");
-        System.out.println();
-
-        Car audir8 = new Car("audir8", 380);
-
-        System.out.println(audir8.show());
-        audir8.start();
-
-        System.out.println();
-        System.out.println("hw5(1)");
-        System.out.println();
-        ArrayList<ForFigure>figures = new ArrayList<ForFigure>();
-        figures.add(new Circle(1.5));
-        figures.add(new Triangle(12,13,14));
-        figures.add(new Square(5));
-
-        System.out.println(squareOfAllFigurehw5(figures));
-
-
-        System.out.println();
-        System.out.println("hw5(2)");
-        System.out.println();
-
-
-        ArrayList<Participant>participants = new ArrayList<Participant>();
-        ArrayList<Barrier>barriers = new ArrayList<Barrier>();
-
-        participants.add(new Participant("Cat",10, 2.0, true));
-        participants.add(new Participant("Person",15, 1.0, true));
-        participants.add(new Participant("Robot",5,1.5, true));
-
-        barriers.add(new Racetrack("racetrack1", 0.5));
-        barriers.add(new Racetrack("racetrack2", 0.75));
-        barriers.add(new Wall("wall1", 1.5));
-        barriers.add(new Wall("wall1", 1.2));
-
-        System.out.println(race1(participants,barriers));
-
-        soutFellNotFell(participants);
-
-        System.out.println();
-        System.out.println("hw7");
-        System.out.println();
-        System.out.println(StringMethods.findSymbolOccurance("sssttsss", 's'));
-        System.out.println(StringMethods.findWordPosition("Hello", "ello"));
-        System.out.println(StringMethods.findWordPosition("Hello", "y"));
-        System.out.println(StringMethods.stringReverse("Hello"));
-        System.out.println(StringMethods.isPalindrome("ugu"));
-        System.out.println(StringMethods.isPalindrome("uuuuuu"));
-        System.out.println(StringMethods.isPalindrome("1234"));
-        //StringMethods.stringGame();
-
-        System.out.println();
-        System.out.println("hw8");
-        System.out.println();
-        String[][] example = {{"1", "2", "3","3"}, {"4", "5", "6", "5"}, {"7", "8", "9", "4"}, {"4", "5", "6", "6"}};
-        try {
-            System.out.println(ArrayValueCalculator.doCalc(example));
-        }
-        catch (NumberFormatException e){
-
-        }
-        catch (ArrayDataException e) {
-            System.out.println(e.getMessage());
-        }
-        catch (ArraySizeExeption e) {
-            System.out.println(e.getMessage());
-        }
-
-        System.out.println();
-        System.out.println("hw10");
-        System.out.println();
-
-        try {
-            ValueCalculator vc = new ValueCalculator(1230000);
-            vc.method();
-        } catch (ArraySizeExeption e) {
-            throw new RuntimeException(e);
-        }
+        ImgLoader.load("https://en.wikipedia.org/wiki/Main_Page");
 
     }
 
