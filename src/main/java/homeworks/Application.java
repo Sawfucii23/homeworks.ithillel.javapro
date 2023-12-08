@@ -133,8 +133,13 @@ public class Application {
 //        } catch (ArraySizeExeption e) {
 //            throw new RuntimeException(e);
 //        }
+//        System.out.println();
+//        System.out.println("hw15");
+//        System.out.println();
+        //ImgLoader.load("https://en.wikipedia.org/wiki/Main_Page");
 
-        ImgLoader.load("https://en.wikipedia.org/wiki/Main_Page");
+
+
 
     }
 
