@@ -3,7 +3,7 @@ package homeworks;
 import homeworks.hw10.ValueCalculator;
 import homeworks.hw11.ImgLoader;
 import homeworks.hw12.CollectionMethodsHw12;
-import homeworks.hw3.Car;
+import homeworks.hw23.*;
 import homeworks.hw4.Animal;
 import homeworks.hw4.Cat;
 import homeworks.hw4.Dog;
@@ -138,6 +138,37 @@ public class Application {
 //        System.out.println();
         //ImgLoader.load("https://en.wikipedia.org/wiki/Main_Page");
 
+        System.out.println();
+        System.out.println("hw23");
+        System.out.println();
+        FurnitureFactory furnitureFactory = new FurnitureFactory();
+
+        Furniture furniture1 = furnitureFactory.getFurniture("CHAIR");
+        furniture1.create();
+
+        Furniture furniture2 = furnitureFactory.getFurniture("TABLE");
+        furniture2.create();
+
+        Furniture furniture3 = furnitureFactory.getFurniture("SOFA");
+        furniture3.create();
+
+
+
+
+        CarBuilder builder = new SportsCarBuilder();
+        CarCreator creator = new CarCreator(builder);
+        Car car = creator.construct();
+        System.out.println(car);
+
+
+
+        Shape rectangle = new Shape(new RectangleAreaCalculation());
+        System.out.println("Площа прямокутника: " + rectangle.calculateArea(5, 3));
+
+        Shape triangle = new Shape(new TriangleAreaCalculation());
+        System.out.println("Площа трикутника: " + triangle.calculateArea(5, 3));
+        System.out.println();
+        System.out.println();
 
 
 
