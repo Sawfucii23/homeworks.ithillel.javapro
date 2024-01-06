@@ -1,12 +1,13 @@
 package homeworks;
 
-import homeworks.hw10.ValueCalculator;
-import homeworks.hw11.ImgLoader;
-import homeworks.hw12.CollectionMethodsHw12;
-import homeworks.hw23.*;
-import homeworks.hw4.Animal;
-import homeworks.hw4.Cat;
-import homeworks.hw4.Dog;
+import homeworks.hw23.builder.Car;
+import homeworks.hw23.builder.CarBuilder;
+import homeworks.hw23.builder.SportsCarBuilder;
+import homeworks.hw23.fabric.Furniture;
+import homeworks.hw23.fabric.FurnitureFactory;
+import homeworks.hw23.strategy.RectangleAreaCalculation;
+import homeworks.hw23.strategy.Shape;
+import homeworks.hw23.strategy.TriangleAreaCalculation;
 import homeworks.hw5.frst.Circle;
 import homeworks.hw5.frst.ForFigure;
 import homeworks.hw5.frst.Square;
@@ -15,18 +16,11 @@ import homeworks.hw5.scnd.Barrier;
 import homeworks.hw5.scnd.Participant;
 import homeworks.hw5.scnd.Racetrack;
 import homeworks.hw5.scnd.Wall;
-import homeworks.hw6.HomeWorkApp;
-import homeworks.hw7.StringMethods;
-import homeworks.hw8.ArrayValueCalculator;
-import homeworks.hw8.Exeptionshw8.ArrayDataException;
-import homeworks.hw8.Exeptionshw8.ArraySizeExeption;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
-import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 
 public class Application {
     public static void main(String[] args) throws IOException, URISyntaxException {
@@ -155,18 +149,21 @@ public class Application {
 
 
 
-        CarBuilder builder = new SportsCarBuilder();
-        CarCreator creator = new CarCreator(builder);
-        Car car = creator.construct();
+        Car car = new SportsCarBuilder()
+                .buildEngine("Powerful engine")
+                .buildWheels("Sports wheels")
+                .buildTransmission("Manual")
+                .getCar();
+
         System.out.println(car);
 
 
 
-        Shape rectangle = new Shape(new RectangleAreaCalculation());
-        System.out.println("Площа прямокутника: " + rectangle.calculateArea(5, 3));
+        Shape rectangle = new Shape(new RectangleAreaCalculation(5,3));
+        System.out.println("Площа прямокутника: " + rectangle.calculateArea());
 
-        Shape triangle = new Shape(new TriangleAreaCalculation());
-        System.out.println("Площа трикутника: " + triangle.calculateArea(5, 3));
+        Shape triangle = new Shape(new TriangleAreaCalculation(5,3));
+        System.out.println("Площа трикутника: " + triangle.calculateArea());
         System.out.println();
         System.out.println();
 

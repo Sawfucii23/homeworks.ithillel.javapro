@@ -1,4 +1,9 @@
-package homeworks.hw23;
+package homeworks.hw23.fabric;
+
+import homeworks.hw23.fabric.Chair;
+import homeworks.hw23.fabric.Furniture;
+import homeworks.hw23.fabric.Sofa;
+import homeworks.hw23.fabric.Table;
 
 public class FurnitureFactory {
     public Furniture getFurniture(String furnitureType) {

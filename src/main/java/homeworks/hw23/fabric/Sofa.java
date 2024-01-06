@@ -1,6 +1,8 @@
-package homeworks.hw23;
+package homeworks.hw23.fabric;
 
-public class Sofa implements Furniture{
+import homeworks.hw23.fabric.Furniture;
+
+public class Sofa implements Furniture {
     @Override
     public void create() {
         System.out.println("Створення дивану");

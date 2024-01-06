@@ -1,4 +1,4 @@
-package homeworks.hw23;
+package homeworks.hw23.strategy;
 
 public class Shape {
     private AreaCalculationStrategy strategy;
@@ -7,7 +7,7 @@ public class Shape {
         this.strategy = strategy;
     }
 
-    public double calculateArea(double length, double width) {
-        return strategy.calculateArea(length, width);
+    public double calculateArea() {
+        return strategy.calculateArea();
     }
 }

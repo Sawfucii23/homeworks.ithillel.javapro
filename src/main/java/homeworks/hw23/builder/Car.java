@@ -1,4 +1,4 @@
-package homeworks.hw23;
+package homeworks.hw23.builder;
 
 public class Car {
     private String engine;
