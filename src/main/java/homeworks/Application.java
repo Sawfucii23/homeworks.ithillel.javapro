@@ -1,5 +1,7 @@
 package homeworks;
 
+import homeworks.hw22.MyTestClass;
+import homeworks.hw22.TestRunner;
 import homeworks.hw23.builder.Car;
 import homeworks.hw23.builder.CarBuilder;
 import homeworks.hw23.builder.SportsCarBuilder;
@@ -167,6 +169,11 @@ public class Application {
         System.out.println();
         System.out.println();
 
+
+        System.out.println("hw22");
+        System.out.println();
+        TestRunner.start(MyTestClass.class);
+        System.out.println();
 
 
     }
