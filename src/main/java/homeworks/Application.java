@@ -1,5 +1,9 @@
 package homeworks;
 
+import homeworks.hw21.DataBaseConnection;
+import homeworks.hw21.Homework;
+import homeworks.hw21.Lesson;
+import homeworks.hw21.LessonDao;
 import homeworks.hw22.MyTestClass;
 import homeworks.hw22.TestRunner;
 import homeworks.hw23.builder.Car;
@@ -21,11 +25,15 @@ import homeworks.hw5.scnd.Wall;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public class Application {
-    public static void main(String[] args) throws IOException, URISyntaxException {
+    public static void main(String[] args) throws IOException, URISyntaxException, SQLException {
 
 //        System.out.println("HW4");
 //        System.out.println();
@@ -175,6 +183,75 @@ public class Application {
         TestRunner.start(MyTestClass.class);
         System.out.println();
 
+        System.out.println("hw21");
+        System.out.println();
+//        try {
+//
+//
+//            final String mysqlUrl = System.getenv("MYSQL_URL");
+//            final String mysqlUser = System.getenv("MYSQL_USER");
+//            final String mysqlPassword = System.getenv("MYSQL_PASSWORD");
+//
+//            Connection connection = DriverManager.getConnection(mysqlUrl, mysqlUser, mysqlPassword);
+//        }
+//        catch (SQLException e) {
+//            throw new RuntimeException(e);
+//        }
+
+
+        LessonDao lessonDao = new LessonDao(DataBaseConnection.getConnection());
+
+
+
+
+        //getAllLessons Test
+        List<Lesson> lessons = LessonDao.getAllLessons();
+        for (Lesson lesson:
+             lessons) {
+            System.out.println(lesson.getName());
+        }
+
+
+
+
+
+
+        //findById test
+        Lesson lesson1 = lessonDao.findById(4);
+        if (lesson1 != null) {
+            System.out.println(lesson1.getName());
+        }
+        System.out.println();
+        System.out.println();
+
+
+
+
+
+
+        //deleteLesson test
+        LessonDao.deleteLesson(12);
+        lessons = lessonDao.getAllLessons();
+        for (Lesson lesson:
+                lessons) {
+            System.out.println(lesson.getName());
+        }
+//
+//
+        //addlesson test
+        Homework homework3 = new Homework(1, "hw3", "fsdKFMSLd;f");
+        Lesson lesson3 = new Lesson(1, "lesson3",homework3);
+        lessonDao.addLesson(lesson3);
+        System.out.println();
+        System.out.println();
+        lessons = lessonDao.getAllLessons();
+        for (Lesson lesson:
+                lessons) {
+            System.out.println(lesson.getName());
+        }
+
+
+
 
     }
 
@@ -264,6 +341,8 @@ public class Application {
             System.out.println(participants.get(x).getName() + ": " + tmp);
         }
     }
+
+
 
 
 
